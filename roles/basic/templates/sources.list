@@ -1,0 +1,15 @@
+deb {{ ubuntu_mirror }} trusty main multiverse restricted universe
+deb {{ ubuntu_mirror }} trusty-updates main multiverse restricted universe
+deb {{ ubuntu_mirror }} trusty-proposed main multiverse restricted universe
+deb {{ ubuntu_mirror }} trusty-backports main multiverse restricted universe
+{% if inventory_hostname == 'grape' %}
+deb http://security.ubuntu.com/ubuntu trusty-security main multiverse restricted universe
+{% endif %}
+
+deb-src {{ ubuntu_mirror }} trusty main multiverse restricted universe
+deb-src {{ ubuntu_mirror }} trusty-updates main multiverse restricted universe
+deb-src {{ ubuntu_mirror }} trusty-proposed main multiverse restricted universe
+deb-src {{ ubuntu_mirror }} trusty-backports main multiverse restricted universe
+{% if inventory_hostname == 'grape' %}
+deb-src http://security.ubuntu.com/ubuntu trusty-security main multiverse restricted universe
+{% endif %}
